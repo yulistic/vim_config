@@ -32,6 +32,8 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+set laststatus=2    "statusline 항시 출력
+set statusline+=%F  "file의 full path를 statusline에 출력
 
 " buffers
 set wildchar=<Tab> wildmenu wildmode=full
@@ -53,8 +55,8 @@ syntax on        " 문법 하이라이트 킴"
 "colorscheme solarized
 
 " Ctags
-set tags=./tags,tags;$HOME
-"set tags=./tags,tags;
+"set tags=./tags,tags;$HOME
+set tags=./tags,tags;
 
 " Cscope 프로젝트 root directory에 있는 cscope.out을 자동으로 불러오기위한
 " script.
@@ -87,6 +89,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nmap <F6> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 """""" Syntastic setting END """"""
 
 
@@ -179,11 +185,11 @@ let g:SrcExpl_nextDefKey = "<F4>"
 "set t_Co=256
 
 "set rtp+=/home/yulistic/.local/lib/python2.7/site-packages/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-set t_Co=256
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+"set laststatus=2
+"set t_Co=256
 
 """" Neocomplete """"
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
