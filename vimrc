@@ -24,7 +24,7 @@ set title               " 제목을 표시
 set showmatch    " 매칭되는 괄호를 보여줌
 set nowrap         " 자동 줄바꿈 하지 않음
 set wmnu           " tab 자동완성시 가능한 목록을 보여줌
-set visualbell		"키를 잘못 누르면 화면을 번쩍이게 함.
+"set visualbell		"키를 잘못 누르면 화면을 번쩍이게 함.
 set shell=/bin/bash
 set wrap
 set autochdir	"자동으로 열린파일의 디렉토리로 이동함.
